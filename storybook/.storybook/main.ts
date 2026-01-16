@@ -15,14 +15,12 @@ const stories = Component
   : ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'];
 
 const config: StorybookConfig = {
-  stories: ['./welcome.stories.mdx', '../../src/**/*.mdx', ...stories],
+  stories: ['../../src/**/*.mdx', ...stories],
 
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-onboarding',
-    '@storybook/addon-styling-webpack',
     '@storybook/addon-a11y',
-    'storybook-dark-mode',
     '@storybook/addon-docs'
   ],
 
