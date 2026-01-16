@@ -1,2 +1,4 @@
 .vercel
 storybook-static
+
+*storybook.log

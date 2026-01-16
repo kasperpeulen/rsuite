@@ -1,59 +1,14 @@
-// This file has been automatically migrated to valid ESM format by Storybook.
-import { fileURLToPath } from "node:url";
 import type { StorybookConfig } from '@storybook/react-vite';
-import { mergeConfig } from 'vite';
-import path, { dirname } from 'path';
-import * as sass from 'sass';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const Component = process.env.M;
-
-const stories = Component
-  ? [`../../src/**/${Component}.stories.@(js|jsx|mjs|ts|tsx)`]
-  : ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'];
 
 const config: StorybookConfig = {
-  stories: ['../../src/**/*.mdx', ...stories],
-
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-onboarding',
-    '@storybook/addon-a11y',
-    '@storybook/addon-docs',
-    '@storybook/addon-vitest'
+  "stories": [
+    "../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
-
-  framework: {
-    name: '@storybook/react-vite',
-    options: {}
-  },
-
-  async viteFinal(config) {
-    return mergeConfig(config, {
-      resolve: {
-        alias: [
-          { find: '@/storybook/', replacement: path.resolve(__dirname, '../') + '/' },
-          {
-            find: '@/internals/',
-            replacement: path.resolve(__dirname, '../../src/internals') + '/'
-          }
-        ],
-        extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.scss']
-      },
-      css: {
-        preprocessorOptions: {
-          scss: {
-            // Use the new API instead of the old JS API
-            implementation: sass
-          }
-        }
-      },
-      optimizeDeps: {
-        exclude: ['chunk-NRQQNQ7F']
-      }
-    });
-  }
+  "addons": [
+    "@storybook/addon-a11y",
+    "@storybook/addon-docs",
+    "@storybook/addon-vitest"
+  ],
+  "framework": "@storybook/react-vite"
 };
 export default config;
