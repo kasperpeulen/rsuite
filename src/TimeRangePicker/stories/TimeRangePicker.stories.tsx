@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import TimeRangePicker from '../TimeRangePicker';
 import { createMeta } from '@/storybook/utils';
 import '../styles/index.scss';

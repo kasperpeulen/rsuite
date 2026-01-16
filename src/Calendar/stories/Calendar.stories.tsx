@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import Calendar from '../Calendar';
 import Badge from '../../Badge';
 import { createMeta } from '@/storybook/utils';

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import PasswordInput from '../PasswordInput';
 import LockIcon from '@rsuite/icons/legacy/Lock';
 import UserIcon from '@rsuite/icons/legacy/User';

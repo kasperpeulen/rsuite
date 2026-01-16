@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import PinInput from '../PinInput';
 import { createMeta } from '@/storybook/utils';
 import '../styles/index.scss';

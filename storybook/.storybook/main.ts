@@ -1,7 +1,12 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
+import { fileURLToPath } from "node:url";
 import type { StorybookConfig } from '@storybook/react-vite';
 import { mergeConfig } from 'vite';
-import path from 'path';
+import path, { dirname } from 'path';
 import * as sass from 'sass';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const Component = process.env.M;
 
@@ -11,22 +16,21 @@ const stories = Component
 
 const config: StorybookConfig = {
   stories: ['./welcome.stories.mdx', '../../src/**/*.mdx', ...stories],
+
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
-    '@storybook/addon-interactions',
     '@storybook/addon-styling-webpack',
     '@storybook/addon-a11y',
-    'storybook-dark-mode'
+    'storybook-dark-mode',
+    '@storybook/addon-docs'
   ],
+
   framework: {
     name: '@storybook/react-vite',
     options: {}
   },
-  docs: {
-    autodocs: 'tag'
-  },
+
   async viteFinal(config) {
     return mergeConfig(config, {
       resolve: {

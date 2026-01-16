@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import Dropdown from '../Dropdown';
 import FileDownloadIcon from '@rsuite/icons/FileDownload';
 import { createMeta } from '@/storybook/utils';
